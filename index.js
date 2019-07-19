@@ -32,7 +32,7 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", member => {
 
-    const logs = member.guild.channels.find(m => m.id === "544146628332748807");
+    const logs = member.guild.channels.find(m => m.id === "601060734146838548");
     if (!logs) return;
 
     logs.send({
@@ -45,12 +45,12 @@ client.on("guildMemberAdd", member => {
             title: "Arrivée d'un nouvel utilisateur",
             fields: [
             {
-                name: "Un nouvel utilisateur vient d'arriver",
+                name: "Un nouveau Kiwi vient d'arriver",
                 value: `Il s'agit de [${member.user.tag}]`,
                 inline: true
             },
             {
-                name: `Nombre de membres après l'arrivée de __${member.user.tag}__`,
+                name: `Nombre de Kiwis après l'arrivée de __${member.user.tag}__`,
                 value: member.guild.memberCount,
                 inline: false
             }],
@@ -62,19 +62,40 @@ client.on("guildMemberAdd", member => {
     });
 });
 
-client.on(`message`, message =>{
-if(message.content.startsWith(prefix + "accept")) {
+client.on("guildMemberRemove", member => {
 
-    message.delete()
-
-    let user = message.guild.member(message.author);
-
-    let role = message.guild.roles.find(m => m.id === "544130573799784458");
-    if(!role) return console.log("Le rôle n'existe pas !");
-
-    user.addRole(role).catch(console.error);
-    message.channel.send(`**Bravo, tu as accepté le règlement**`);
-    
-}
+    const logs = member.guild.channels.find(m => m.id === "601060734146838548");
+    if (!logs) return;
+	
+    logs.send({embed: {
+            color: 0xFE6F01,
+            author: {
+                name: member.user.tag,
+                icon_url: member.user.displayAvatarURL
+            },
+            title: "Départ d'un utilisateur",
+	    image: {
+		    url: "http://www.lesaffaires.com/uploads/images/normal/578f645f2123b12d0257dfa1fbdb8fff.jpg"
+	    },
+	    thumbnail: {
+                        url: member.user.displayAvatarURL
+            },
+            fields: [
+            {
+                name: "Un Kiwi vient de partir",
+                value: `Il s'agit de [${member.user.tag}]`,
+                inline: true
+            },
+            {
+                name: `Nombre de Kiwis après le départ de __${member.user.tag}__`,
+                value: member.guild.memberCount,
+                inline: false
+            }],
+            timestamp: new Date(),
+            footer: {
+                text: `ID : ${member.user.id} | FilEeaZaiR#1258`,
+            }
+        }
+    });
 
 });
