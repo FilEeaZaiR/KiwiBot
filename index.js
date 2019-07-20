@@ -99,3 +99,159 @@ client.on("guildMemberRemove", member => {
     });
 
 });
+
+//Début de la commande règlements :
+client.on(`message`, message =>{
+ 
+//Commandes addrole :
+    if(message.content === prefix + "role1" || message.content === prefix + "addrole1") {
+        console.log(`Un utilisateur viens de faire la commande roles !`)
+        message.channel.send({
+            embed: {
+                color: 0xFE6F01,
+                fields: [
+                {
+                    name: "Catégorie sexe :",
+                    value: "Alors voici des rôles disponible :",
+                    inline: false
+                },
+                {
+                    name: "Filles :",
+                    value: "Appuyez sur :girl:",
+                    inline: false
+                },
+                {
+                    name: "Garçons :",
+                    value: "Appuyez sur :boy:",
+                    inline: false
+                }],
+                timestamp: new Date(),
+                footer: {
+                    text: `AddRole | FilEeaZaiR#1258`,
+                }
+            }
+        });
+    }
+    
+    if(message.content === prefix + "role2" || message.content === prefix + "addrole2") {
+        console.log(`Un utilisateur viens de faire la commande roles !`)
+        message.channel.send({
+            embed: {
+                color: 0xFE6F01,
+                fields: [
+                {
+                    name: "Catégorie âge :",
+                    value: "Alors voici des rôles disponible :",
+                    inline: false
+                },
+                {
+                    name: "-10 ans :",
+                    value: "Appuyez sur :one:",
+                    inline: false
+                },
+                {
+                    name: "10/12 ans :",
+                    value: "Appuyez sur :two:",
+                    inline: false
+                },
+                {
+                    name: "12/14 ans :",
+                    value: "Appuyez sur :three:",
+                    inline: false
+                },
+                {
+                    name: "14/16 ans :",
+                    value: "Appuyez sur :four:",
+                    inline: false
+                },
+                {
+                    name: "16/18 ans :",
+                    value: "Appuyez sur :five:",
+                    inline: false
+                },
+                {
+                    name: "+18 ans :",
+                    value: "Appuyez sur :six:",
+                    inline: false
+                }],
+                timestamp: new Date(),
+                footer: {
+                    text: `AddRole | FilEeaZaiR#1258`,
+                }
+            }
+        });
+    }
+
+    if(message.content === prefix + "role3" || message.content === prefix + "addrole3") {
+        console.log(`Un utilisateur viens de faire la commande roles !`)
+        message.channel.send({
+            embed: {
+                color: 0xFE6F01,
+                fields: [
+                {
+                    name: "Catégorie passion :",
+                    value: "Alors voici des rôles disponible :",
+                    inline: false
+                },
+                {
+                    name: "Musicien :",
+                    value: "Appuyez sur :one:",
+                    inline: false
+                },
+                {
+                    name: "Éditeur :",
+                    value: "Appuyez sur :two:",
+                    inline: false
+                },
+                {
+                    name: "Créatif :",
+                    value: "Appuyez sur :three:",
+                    inline: false
+                },
+                {
+                    name: "Sportif :",
+                    value: "Appuyez sur :four:",
+                    inline: false
+                }],
+                timestamp: new Date(),
+                footer: {
+                    text: `AddRole | FilEeaZaiR#1258`,
+                }
+            }
+        });
+    }
+	
+    if(message.content === prefix + "role4" || message.content === prefix + "addrole4") {
+        console.log(`Un utilisateur viens de faire la commande roles !`)
+        message.channel.send({
+            embed: {
+                color: 0xFE6F01,
+                fields: [
+                {
+                    name: "Catégorie Gacha :",
+                    value: "Alors voici des rôles disponible :",
+                    inline: false
+                },
+                {
+                    name: "GachaLife :",
+                    value: "Appuyez sur :one:",
+                    inline: false
+                },
+                {
+                    name: "GachaStudio :",
+                    value: "Appuyez sur :two:",
+                    inline: false
+                },
+                {
+                    name: "GachaVerse :",
+                    value: "Appuyez sur :three:",
+                    inline: false
+                }],
+                timestamp: new Date(),
+                footer: {
+                    text: `AddRole | FilEeaZaiR#1258`,
+                }
+            }
+        });
+    }
+});
